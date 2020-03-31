@@ -1,0 +1,6 @@
+{
+    "name": "CovidCleaner",
+    "version": "1.0",
+    "description": "A chrome extension to replace all matches of covid19 virus to an emoji",
+    "manifest_version": 2
+}
