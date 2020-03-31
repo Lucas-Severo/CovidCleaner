@@ -1,6 +1,7 @@
-const elementsInsideBody = [...document.body.getElementsByTagName('*')];
+
 
 function findAndReplace() {
+    const elementsInsideBody = [...document.body.getElementsByTagName('*')];
     for(element of elementsInsideBody) {
         for(child of element.childNodes) {
             if(child.nodeType === 3) {
@@ -12,7 +13,7 @@ function findAndReplace() {
 
 function replaceText(node) {
     const words = ["coronavírus", "coronavirus", "corona vírus", "corona virus",
-                 "covid-19", "Covid-19", "covid19", "covid 19", "covid"]
+                 "covid-19", "covid-19", "covid19", "covid 19", "covid"]
 
     let value = node.nodeValue;
 
@@ -23,4 +24,6 @@ function replaceText(node) {
     node.nodeValue = value;
 }
 
-window.onload = findAndReplace();
+window.onchange = findAndReplace();
+
+setInterval(() => findAndReplace(), 1000);
