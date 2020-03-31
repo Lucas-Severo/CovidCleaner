@@ -10,17 +10,17 @@ function findAndReplace() {
     }
 }
 
-async function replaceText(node) {
-    const words = ["coronavírus", "coronavirus", "corona virus", "corona vírus", 
-                 "covid-19", "covid19", "covid 19"]
+function replaceText(node) {
+    const words = ["coronavírus", "coronavirus", "corona vírus", "corona virus",
+                 "covid-19", "Covid-19", "covid19", "covid 19", "covid"]
 
     let value = node.nodeValue;
 
     for(word of words) {
         let re = new RegExp(word, 'gi');
-        value = await value.replace(re, "💉");
+        value = value.replace(re, "💉");
     }
     node.nodeValue = value;
 }
 
-window.onload = findAndReplace();
+document.onload = findAndReplace();
