@@ -21,7 +21,8 @@ function replaceText(node) {
         let re = new RegExp(word, 'gi');
         value = value.replace(re, "💉");
     }
-    node.nodeValue = value;
+    if (value !== node.nodeValue)
+        node.nodeValue = value;
 }
 
 window.onchange = findAndReplace();
