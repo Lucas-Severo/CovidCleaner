@@ -23,4 +23,4 @@ function replaceText(node) {
     node.nodeValue = value;
 }
 
-document.onload = findAndReplace();
+window.onload = findAndReplace();
