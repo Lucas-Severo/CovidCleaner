@@ -1,9 +1,7 @@
 function update() {
     chrome.storage.local.get(['found'], (result) => {
-        document.querySelector("#result").innerHTML = result.found;
+        document.querySelector("#result").innerHTML = result.found || "0";
     });
 }
-
-window.onload = update();
 
 setInterval(() => update(), 1000);
