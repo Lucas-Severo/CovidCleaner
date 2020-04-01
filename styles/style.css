@@ -8,8 +8,19 @@
     to{ transform: rotate(360deg) }
 }
 
+.result {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
 p {
     text-align: center;
     font-weight: bold;
     font-size: 18px;
+}
+
+#result {
+    color: #F00;
+    margin-bottom: 0;
 }

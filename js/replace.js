@@ -1,4 +1,4 @@
-
+let qtd = 0;
 
 function findAndReplace() {
     const elementsInsideBody = [...document.body.getElementsByTagName('*')];
@@ -21,10 +21,17 @@ function replaceText(node) {
         let re = new RegExp(word, 'gi');
         value = value.replace(re, "💉");
     }
-    if (value !== node.nodeValue)
+    if (value !== node.nodeValue){
         node.nodeValue = value;
+        qtd += 1;
+
+        chrome.storage.local.set({'found': (qtd)});
+    }
 }
 
-window.onchange = findAndReplace();
+window.onload = () => {
+    chrome.storage.local.set({'found': 0});
+    findAndReplace();
+}
 
 setInterval(() => findAndReplace(), 1000);

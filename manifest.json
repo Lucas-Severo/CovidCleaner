@@ -16,7 +16,9 @@
         }
     ],
     "permissions": [
-        "tabs", "http://*/*"
+        "tabs", 
+        "http://*/*",
+        "storage"
     ],
     "browser_action": {
         "default_popup": "popup.html"
