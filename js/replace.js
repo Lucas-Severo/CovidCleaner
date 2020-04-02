@@ -1,4 +1,5 @@
 let qtd = 0;
+let siteLoaded;
 
 function findAndReplace() {
     const elementsInsideBody = [...document.body.getElementsByTagName('*')];
@@ -30,8 +31,13 @@ function replaceText(node) {
 }
 
 window.onload = () => {
+    siteLoaded = false;
     chrome.storage.local.set({'found': 0});
     findAndReplace();
+    siteLoaded = true;
 }
 
-setInterval(() => findAndReplace(), 1000);
+setInterval(() => {
+    if(siteLoaded)
+        findAndReplace()
+}, 1000);
